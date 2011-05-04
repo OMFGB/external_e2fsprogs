@@ -16,7 +16,7 @@ LOCAL_SYSTEM_SHARED_LIBRARIES := \
 
 LOCAL_C_INCLUDES := external/e2fsprogs/lib
 
-LOCAL_CFLAGS := -O2 -g -W -Wall \
+LOCAL_CFLAGS := -Os -g -W -Wall \
 	-DHAVE_UNISTD_H \
 	-DHAVE_ERRNO_H \
 	-DHAVE_NETINET_IN_H \
@@ -50,6 +50,7 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES :=  \
 	e2fsck.c \
+	crc32.c \
 	dict.c \
 	super.c \
 	pass1.c \
@@ -69,7 +70,6 @@ LOCAL_SRC_FILES :=  \
 	ehandler.c \
 	problem.c \
 	message.c \
-	swapfs.c \
 	ea_refcount.c \
 	rehash.c \
 	region.c
@@ -88,7 +88,7 @@ LOCAL_SYSTEM_SHARED_LIBRARIES := \
 
 LOCAL_C_INCLUDES := external/e2fsprogs/lib
 
-LOCAL_CFLAGS := -O2 -g -W -Wall \
+LOCAL_CFLAGS := -Os -g -W -Wall \
 	-DHAVE_DIRENT_H \
 	-DHAVE_ERRNO_H \
 	-DHAVE_INTTYPES_H \
